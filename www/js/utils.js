@@ -1,4 +1,11 @@
 var rowID = 0;
+
+window.addEventListener("batterystatus", onBatteryStatus, false);
+
+function onBatteryStatus(status) {
+    alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
+}
+
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {

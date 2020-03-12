@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Acceleration Example</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        var watchID = null;
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+            startWatch();
+        }
+
+        function startWatch() {
+            var options = { frequency: 30 };
+            watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+        }
+
+        function stopWatch() {
+            if (watchID) {
+                navigator.accelerometer.clearWatch(watchID);
+                watchID = null;
+            }
+        }
+
+        function onSuccess(acceleration) {
+            var element = document.getElementById('accelerometer');
+            element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
+                                'Acceleration Y: ' + acceleration.y + '<br />' +
+                                'Acceleration Z: ' + acceleration.z + '<br />' +
+                                'Timestamp: '      + acceleration.timestamp + '<br />';
+        }
+
+        function onError() {
+            alert('onError!');
+        }
+    </script>
+  </head>
+  <body>
+    <div class="app">
+        <h1>Accelerometer</h1>
+        <div id="accelerometer">Waiting for accelerometer...</div>
+        <a href="index.html" class="btn">Index</a>
+    </div>
+  </body>
+</html>
