@@ -17,9 +17,19 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <preference name="SplashScreen" value="./res/screen/android/Pixel.jpg" />
+        
+        <!-- <splash src="res/screen/android/Pixel.jpg" width="1080" height="1920"/>
+        <preference name="SplashScreenDelay" value="3000" />  -->
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+    </platform>
+    <platform name="browser">
+        <preference name="SplashScreen" value="./res/screen/browser/Windows.jpg" />
+        <preference name="SplashScreenDelay" value="3000" /> 
+        <preference name="SplashScreenWidth" value="1780" /> 
+        <preference name="SplashScreenHeight" value="1000" /> 
     </platform>
 </widget>
