@@ -1,0 +1,4 @@
+### ApacheCordova ###
+# Apache Cordova generated files and directories
+platforms
+node_modules
