@@ -4,24 +4,7 @@
         <title>Battery Status Example</title>
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-        <script type="text/javascript" charset="utf-8">
-            document.addEventListener("batterystatus", onBatteryStatus, false);
-            document.addEventListener("batterylow", onBatteryLow, false);
-            document.addEventListener("batterycritical", onBatteryCritical, false);
-
-            function onBatteryStatus(status) {
-                var element = document.getElementById("device");
-                element.innerHTML = "Level: " + status.level + " isPlugged: " + status.isPlugged;
-            }
-
-            function onBatteryLow(status) {
-                alert("Battery Level Low " + status.level + "%");
-            }
-
-            function onBatteryCritical(status) {
-                alert("Battery Level Critical " + status.level + "%\nRecharge Soon!");
-            }
-        </script>
+        <script type="text/javascript" charset="utf-8" src="js/utils.js"></script>
     </head>
     <body>
         <div class="app">
